@@ -1,5 +1,6 @@
 package cz.jiripinkas.sitemonitoring;
 
+import com.zaxxer.hikari.HikariConfig;
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
@@ -50,10 +51,22 @@ public class SpringConfiguration {
 
 	@Bean
 	public DataSource dataSource() {
-		HikariDataSource dataSource = new HikariDataSource();
+            
+              // String configFile = "src/main/resources/db.properties";
+                HikariConfig cfg = new HikariConfig();
+                
+                cfg.setJdbcUrl("jdbc:mysql://localhost/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");
+                cfg.setUsername("Amine");
+                cfg.setPassword("S2flvjj333@123");
+                
+                
+		HikariDataSource dataSource = new HikariDataSource(cfg);
+               
+                /*
 		dataSource.setJdbcUrl("jdbc:hsqldb:mem:test");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
+                */
 		return dataSource;
 	}
 

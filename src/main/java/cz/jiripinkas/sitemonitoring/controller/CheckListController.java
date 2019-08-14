@@ -10,13 +10,11 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
-import lombok.Getter;
-import lombok.Setter;
+
 import cz.jiripinkas.sitemonitoring.entity.Check;
 import cz.jiripinkas.sitemonitoring.service.CheckService;
 
-@Getter
-@Setter
+
 @ManagedBean
 @ViewScoped
 public class CheckListController implements Serializable {
@@ -53,5 +51,31 @@ public class CheckListController implements Serializable {
 	public void clear() {
 		check = new Check();
 	}
+
+    public CheckService getCheckService() {
+        return checkService;
+    }
+
+    public void setCheckService(CheckService checkService) {
+        this.checkService = checkService;
+    }
+
+    public List<Check> getChecks() {
+        return checks;
+    }
+
+    public void setChecks(List<Check> checks) {
+        this.checks = checks;
+    }
+
+    public Check getCheck() {
+        return check;
+    }
+
+    public void setCheck(Check check) {
+        this.check = check;
+    }
+        
+        
 
 }

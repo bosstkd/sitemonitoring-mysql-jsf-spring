@@ -27,6 +27,13 @@
 			<artifactId>HikariCP</artifactId>
 			<version>2.2.5</version>
 		</dependency>
+                <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <version>8.0.13</version>
+                </dependency>
+
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
@@ -95,5 +102,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+    <name>sitemonitoring-MySql-tutorial</name>
 </project>
